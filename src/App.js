@@ -32,17 +32,20 @@ function App() {
   },[])
 
   return (
-    <div className="App">
+    // <div className="App">
+    <div className="min-h-screen flex flex-col bg-bgDark2">
       <div>
         <Navbar />
       </div>
-      <div>
+      <div className="bg-bgDark2">
         <Filter filterData={filterData}
           category={category}
           setCategory={setCategory}
         />
       </div>
-      <div className='cardss'>
+      {/* <div className='cardss'> */}
+      <div className="w-11/12 max-w-[1200px] 
+        mx-auto flex flex-wrap justify-center items-center min-h-[50vh]">
         <Cards courses={courses} category={category}/>
       </div>
     </div>

@@ -40,11 +40,14 @@ const Cards = (props) => {
 // getcourses return allCourses so map is applied on allCourses
 
   return (
-    <div className='cardie'>
-        {
+    // <div className='cardie'>
+    <div className="flex flex-wrap justify-center gap-4 mb-4">
+      {
         getCourses().map( (course) => (
-            <Card key={course.id} course={course} likedCourses={likedCourses} setLikedCourses={setLikedCourses}
-            />
+            <Card key={course.id} 
+            course = {course} 
+            likedCourses={likedCourses}
+            setLikedCourses={setLikedCourses}/>
         ))
       }
     </div>

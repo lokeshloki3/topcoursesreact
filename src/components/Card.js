@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {FcLike,FcLikePlaceholder} from "react-icons/fc";
 import { toast } from 'react-toastify';
 
 const Card = (props) => {
@@ -29,24 +30,44 @@ const Card = (props) => {
   }
 
   return (
-    <div className='cardone'>
-      <div>
-        <img src={course.image.url} className='images'></img>
+    // <div className='cardone'>
+    <div className='w-[300px] bg-black bg-opacity-80 rounded-md overflow-hidden'>
+      <div className='relative'>
+        <img src={course.image.url}></img>
+
+        {/* <div className='likebutton'> */}
+        <div className='w-[40px] h-[40px] bg-white rounded-full absolute right-2 bottom-[-12px]
+        grid place-items-center'>
+          <button onClick={clickHandler}>
+            {
+              likedCourses.includes(course.id) ? 
+              (<FcLike fontSize="1.75rem" />)
+              :(<FcLikePlaceholder fontSize="1.75rem" />)
+            }
+          </button>
+        </div>
       </div>
-      <div className='likebutton'>
-        <button onClick={clickHandler}
-          className={likedCourses.includes(course.id) ? 'liked' : ''}
-        >
-          {likedCourses.includes(course.id) ? 'Liked' : 'Like'}
-        </button>
-      </div>
-      <div>
-        <p className='para1'>{course.title}</p>
-        <p>{course.description}</p>
+      <div className='p-4'>
+        <p className="text-white font-semibold text-lg leading-6">{course.title}</p>
+        <p className='mt-2 text-white'>
+          {
+            course.description.length >100 ? 
+            (course.description.substr(0,100)) + "..." :
+            (course.description)
+          }
+        </p>
       </div>
     </div>
-   
   )
 }
 
 export default Card
+
+{/* <div>
+        <p className='para1'>{course.title}</p>
+        <p>{course.description}</p>
+      </div>
+
+className={likedCourses.includes(course.id) ? 'liked' : ''}
+> 
+{likedCourses.includes(course.id) ? 'Liked' : 'Like'} */}

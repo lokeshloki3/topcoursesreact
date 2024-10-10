@@ -1,4 +1,4 @@
-.head{
+/* .head{
     text-align: center;
 }
 
@@ -24,7 +24,7 @@
     flex-wrap: wrap;
     padding-left: 120px;
     margin-top: 20px;
-    /* min-height: 50vh; */
+    min-height: 50vh;
 }
 
 .cardie{
@@ -42,7 +42,7 @@
 
 .images{
     width: 300px;
-    /* aspect-ratio: 1/1; */
+    aspect-ratio: 1/1;
 }
 
 .para1{
@@ -66,4 +66,26 @@
 
 .filterritem.selected {
     background-color: rgba(0, 0, 0, 0.6);
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: conic-gradient(#0000 10%, #22223b);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+    animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+    to {
+        transform: rotate(1turn);
+    }
+}
+body{
+    background-color: lightpink;
 }
