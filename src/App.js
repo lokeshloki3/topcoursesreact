@@ -1,23 +1,50 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Cards from "./components/Cards"
+import Filter from "./components/Filter"
+import Navbar from "./components/Navbar"
+import {apiUrl, filterData } from './data'
 
 function App() {
+  const [courses, setCourses]= useState([]);
+
+  // category from filterData( to be matched with apiUrl title)
+  // initially all
+  const [category,setCategory]=useState(filterData[0].title);
+  // sent category in Cards for checking purpose only
+
+  async function fetchData() {
+    try {
+      let response = await fetch(apiUrl);
+      let output = await response.json();
+      // to use this data outside this function that is stored in another variable courses
+      // as required data is inside output data
+      setCourses(output.data);
+      console.log(output.data);
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Navbar />
+      </div>
+      <div>
+        <Filter filterData={filterData}
+          category={category}
+          setCategory={setCategory}
+        />
+      </div>
+      <div className='cardss'>
+        <Cards courses={courses} category={category}/>
+      </div>
     </div>
   );
 }

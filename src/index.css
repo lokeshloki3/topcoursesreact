@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.head{
+    text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.filterr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filterritem{
+    color: white;
+    background-color: rgb(22, 93, 51);
+}
+
+.filterritem:hover{
+    opacity: 50%;
+}
+
+.cardss{
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 120px;
+    margin-top: 20px;
+    /* min-height: 50vh; */
+}
+
+.cardie{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cardone{
+    width: 300px;
+    background-color: aquamarine;
+    border: 1px solid black;
+    margin: 4px;
+}
+
+.images{
+    width: 300px;
+    /* aspect-ratio: 1/1; */
+}
+
+.para1{
+    font-size: large;
+    font-weight: bold;
+}
+
+.likebutton{
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+}
+
+.likebutton button {
+    background-color: gray;
+}
+  
+.likebutton button.liked {
+    background-color: red;
+}
+
+.filterritem.selected {
+    background-color: rgba(0, 0, 0, 0.6);
 }
