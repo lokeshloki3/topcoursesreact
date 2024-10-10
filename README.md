@@ -3,7 +3,11 @@ Demo - https://lokeshloki3.github.io/topcoursesreact/
 Steps- 
 
 	npm install
-	npm run start
+
+ 	Tailwind CSS Post CSS method
+  	npm i react-toastify
+	npm i react-icons
+ 	npm run start
  
 	npm install gh-pages --save-dev
 	
